@@ -1,0 +1,29 @@
+permalink: /posts/:title
+markdown: kramdown
+
+gems:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+name: Rishabh Agarwal
+url: theSparta.github.io
+enforce_ssl: theSparta.github.io
+description: Rishabh's personal website
+
+collections:
+  ml:
+    output: true
+  math:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: ml
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: math
+    values:
+      layout: post

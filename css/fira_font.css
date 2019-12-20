@@ -1,0 +1,109 @@
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-Light.eot');
+    src: local('Fira Sans Light'),
+         url('/css/fira/eot/FiraSans-Light.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-Light.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-LightItalic.eot');
+    src: local('Fira Sans Light Italic'),
+         url('/css/fira/eot/FiraSans-LightItalic.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-LightItalic.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-Regular.eot');
+    src: local('Fira Sans Regular'),
+         url('/css/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-Regular.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-RegularItalic.eot');
+    src: local('Fira Sans Regular Italic'),
+         url('/css/fira/eot/FiraSans-RegularItalic.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-RegularItalic.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-RegularItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-Medium.eot');
+    src: local('Fira Sans Medium'),
+         url('/css/fira/eot/FiraSans-Medium.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-Medium.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-MediumItalic.eot');
+    src: local('Fira Sans Medium Italic'),
+         url('/css/fira/eot/FiraSans-MediumItalic.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-MediumItalic.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-SemiBold.eot');
+    src: local('Fira Sans Semi Bold'),
+         url('/css/fira/eot/FiraSans-SemiBold.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-SemiBold.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('/css/fira/eot/FiraSans-BoldItalic.eot');
+    src: local('Fira Sans Bold Italic'),
+         url('/css/fira/eot/FiraSans-BoldItalic.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraSans-BoldItalic.woff') format('woff'),
+         url('/css/fira/ttf/FiraSans-BoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('/css/fira/eot/FiraMono-Regular.eot');
+    src: local('Fira Mono'),
+         url('/css/fira/eot/FiraMono-Regular.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraMono-Regular.woff') format('woff'),
+         url('/css/fira/ttf/FiraMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('/css/fira/eot/FiraMono-Bold.eot');
+    src: local('Fira Mono Bold'),
+         url('/css/fira/eot/FiraMono-Bold.eot') format('embedded-opentype'),
+         url('/css/fira/woff/FiraMono-Bold.woff') format('woff'),
+         url('/css/fira/ttf/FiraMono-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

@@ -1,0 +1,22 @@
+<section class="sidebar">
+
+  <section class="name">
+    <a href="/">
+      <span id="fname">{{ site.name|split:' '|first }}</span>
+      <span id="lname">{{ site.name|split:' '|last }}</span>
+    </a>
+  </section>
+
+  <section class="meta">
+    <a href="{{ site.github.owner_url }}" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><i class="fa fa-github"></i></a>
+    <a href="https://twitter.com/{{ site.twitter }}" target="_blank" title="Follow me on Twitter" aria-label="Follow me on Twitter"><i class="fa fa-twitter"></i></a>
+    <a href="/atom.xml" title="Atom RSS feed" aria-label="Atom RSS feed"><i class="fa fa-rss"></i></a>
+  </section>
+
+  <section class="sections">
+    <ul>
+      <li><a href="{{site.github.url}}/about.html">about</a></li>
+      <li><a href="{{site.github.url}}/">posts</a></li>
+    </ul>
+  </section>
+</section>
