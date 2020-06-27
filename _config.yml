@@ -6,8 +6,8 @@ gems:
   - jekyll-redirect-from
 
 name: Rishabh Agarwal
-url: theSparta.github.io
-enforce_ssl: theSparta.github.io
+url: agarwl.github.io
+enforce_ssl: agarwl.github.io
 description: Rishabh's personal website
 
 collections:
