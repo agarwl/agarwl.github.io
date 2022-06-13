@@ -5,7 +5,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
-name: Rishabh Agarwal
+name: Google Brain
 url: agarwl.github.io
 enforce_ssl: agarwl.github.io
 description: Rishabh's personal website
