@@ -1345,3 +1345,10 @@ code {
 .prof-summary {
   margin-top: 2em;
 }
+
+#news ul { /* Targets the <ul> inside the #projects section */
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 200px; /* Sets a maximum height for the list - adjust as needed */
+  padding: 10px; /* Add some padding for better visual appearance */
+/*   border: 1px solid #ccc; /* Optional: Add a border */ */
+}
