@@ -25,6 +25,8 @@ def render():
         content = template.substitute(
             title=escape(title), description=escape(description, quote=True), asset_version=asset_version,
             canonical='https://agarwl.github.io' + path, content=content,
+            page_class=active or 'other',
+            profile=(SOURCE / 'profile.html').read_text() if filename == 'index.html' else '',
             about_current=' aria-current="page"' if active == 'about' else '',
             research_current=' aria-current="page"' if active == 'research' else '',
             talks_current=' aria-current="page"' if active == 'talks' else '',
