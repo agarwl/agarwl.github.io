@@ -1,0 +1,21 @@
+name: Site checks
+on:
+  pull_request:
+  push:
+    branches: [master]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check generated pages
+        run: python3 .github/scripts/build.py --check
+      - name: Validate security, markup, and local links
+        run: python3 .github/scripts/check.py
+      - name: Test security regression checks
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'

@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css?family=Dosis|Raleway');
 
 
 /**
@@ -483,7 +482,7 @@ height
 .columns {
   width: 100%;
   float: left;
-  box-sizing: border-box; }height
+  box-sizing: border-box; }
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
@@ -1209,11 +1208,9 @@ table {
 /*
  * Change markup
  */
-.items-done {
-  list-style-image: url("/assets/images/icons/done.svg"); }
 
-.items-to-do {
-  list-style-image: url("/assets/images/icons/not-done.svg"); }
+
+
 
 code {
   font-family: Fira Mono,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace; }
@@ -1325,7 +1322,7 @@ code {
 #profile_picture {
   max-width: 60%;
   height: auto;
-  align:center;
+
       display: block;
     margin: auto auto;
      margin-top: 0em;
@@ -1335,7 +1332,7 @@ code {
 
 @media screen and (min-width: 800px) {
 #profile_picture {
-  padding-top: -1em;
+
 }
 }
 .resume-heading {
@@ -1350,5 +1347,53 @@ code {
   overflow-y: auto; /* Enables vertical scrolling */
   max-height: 200px; /* Sets a maximum height for the list - adjust as needed */
   padding: 10px; /* Add some padding for better visual appearance */
-/*   border: 1px solid #ccc; /* Optional: Add a border */ */
+
+}
+
+/* Security/accessibility fixes; preserve the existing site layout. */
+img { height: auto; }
+.site-header .site-title { margin-bottom: 0; font-weight: 200; }
+.research-image { margin-top: 0; }
+.research-intro { text-align: center; }
+.paper-highlight { color: red; }
+.site-footer .social-links .twitter-icon { color: #00acee; }
+.site-footer .social-links .github-icon, .site-footer .github-link, .site-footer .email-link { color: #211f1f; }
+.site-footer .social-links .linkedin-icon, .site-footer .social-links .scholar-icon { color: #0e76a8; }
+.skip-link { position: absolute; top: -100px; left: 15px; z-index: 20; background: white; padding: 8px 12px; }
+.skip-link:focus { top: 10px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid #1756a9; outline-offset: 4px; }
+.mobile-menu { display: none; }
+@media screen and (max-width: 549px) {
+  .mobile-menu { display: block; position: relative; float: left; width: 10%; z-index: 2; }
+  .mobile-menu summary { display: block; font-size: 32px; cursor: pointer; list-style: none; }
+  .mobile-menu summary::-webkit-details-marker { display: none; }
+  .mobile-menu nav { position: absolute; top: 46px; left: 0; width: 150px; padding: 15px; background: #e8e8e8; border: 1px solid #ddd; }
+  .mobile-menu nav a { display: block; padding: 8px; color: #111; }
+}
+
+/* Small spacing refinements; keep the existing academic-site structure. */
+.site-header { margin-bottom: 32px; }
+.site-header .desktop-menu a[aria-current="page"] { text-decoration: underline; text-underline-offset: 5px; }
+#main p, #main > ul { line-height: 1.65; }
+#main > h3 { margin-top: 28px; }
+#main > ul > li + li { margin-top: 6px; }
+#profile_picture { border-radius: 4px; }
+.site-footer .social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.site-footer .social-links a:not(:first-child) { margin-left: 0; }
+.site-footer .email-link { overflow-wrap: anywhere; }
+@media screen and (min-width: 550px) {
+  .site-header { margin-top: 24px; margin-bottom: 40px; }
+  .site-header .site-title { padding-top: .65em; }
+}
+@media screen and (max-width: 549px) {
+  .site-header .site-title { padding-top: 12px; }
+  .mobile-menu { width: 44px; }
+  .mobile-menu summary { min-width: 44px; min-height: 44px; font-size: 28px; line-height: 44px; }
+  #profile_picture { margin-top: 12px; margin-bottom: 6px; }
+  .divider, .invisible-divider { margin-top: 2em; margin-bottom: 1.5em; }
+}
+@media screen and (max-width: 549px) {
+  #main .six.columns table, #main .six.columns tbody { display: block; max-width: 100%; }
+  #main .six.columns tr { display: flex; flex-wrap: wrap; }
+  #main .six.columns td { display: block; }
 }
