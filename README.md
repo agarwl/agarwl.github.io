@@ -1,6 +1,6 @@
 # Rishabh Agarwal’s website
 
-The static site at [agarwl.github.io](https://agarwl.github.io/), with the existing layout and typography. It loads no JavaScript or third-party runtime resources. Styles, fonts, images, and icons are hosted locally.
+The static site at [agarwl.github.io](https://agarwl.github.io/), with a warm, responsive academic layout inspired by [Periodic Labs](https://periodic.com/). It loads no JavaScript or third-party runtime resources. Typography uses system fonts; styles, images, and icon fonts are hosted locally.
 
 ## Edit and preview
 
