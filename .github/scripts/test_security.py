@@ -50,7 +50,13 @@ class SecurityChecks(unittest.TestCase):
         self.assertFalse(check_css("@font-face { src: url('/css/fonts/FiraSans-Light.woff'); }"))
 
     def test_rejects_malformed_markup(self):
-        self.assertTrue(Page(self.injected('<p><div>bad</div></p>')).errors)
+        for markup in [
+            '<p><div>bad</div></p>',
+            '<h2>Publications<div>A paper</div></h2>',
+            '<h2>Publications<h3>A paper</h3></h2>',
+        ]:
+            with self.subTest(markup=markup):
+                self.assertTrue(Page(self.injected(markup)).errors)
 
 
 if __name__ == '__main__':

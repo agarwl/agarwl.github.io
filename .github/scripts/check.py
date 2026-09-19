@@ -9,6 +9,8 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[2]
 VOID = set('area base br col embed hr img input link meta param source track wbr'.split())
+HEADINGS = {'h1', 'h2', 'h3', 'h4', 'h5', 'h6'}
+BLOCKS = HEADINGS | {'div', 'p', 'ul', 'ol', 'section', 'article', 'table', 'figure', 'nav', 'header', 'footer', 'main'}
 FORBIDDEN = {'script', 'iframe', 'frame', 'object', 'embed', 'base', 'form', 'style', 'svg', 'math'}
 REQUIRED_CSP = {
     'default-src': "'none'", 'script-src': "'none'", 'style-src': "'self'",
@@ -46,8 +48,10 @@ class Page(HTMLParser):
         if tag == 'title': self.title = True
         if tag == 'a' and 'a' in self.stack:
             self.errors.append('Nested anchor')
-        if tag in {'div', 'p', 'h1', 'h2', 'h3', 'ul', 'section', 'article'} and 'p' in self.stack:
+        if tag in BLOCKS and 'p' in self.stack:
             self.errors.append(f'Invalid {tag} inside paragraph')
+        if tag in BLOCKS and HEADINGS.intersection(self.stack):
+            self.errors.append(f'Invalid {tag} inside heading')
         if a.get('id'):
             if a['id'] in self.ids: self.errors.append('Duplicate id: ' + a['id'])
             self.ids.add(a['id'])
