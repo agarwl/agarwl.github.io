@@ -1,10 +1,10 @@
 # Rishabh Agarwal’s website
 
-A static academic website for [agarwl.github.io](https://agarwl.github.io/). No JavaScript, third-party runtime assets, package manager, or installed build dependencies are required.
+The static site at [agarwl.github.io](https://agarwl.github.io/), with the existing layout and typography. It loads no JavaScript or third-party runtime resources. Styles, fonts, images, and icons are hosted locally.
 
 ## Edit and preview
 
-Edit page content and the shared layout in `.github/site/`, and styles in `css/main.css`. Use Python 3.9 or newer:
+Edit page content and the shared layout in `.github/site/`, and styles in `css/`. Use Python 3.9 or newer:
 
 ```sh
 python3 .github/scripts/build.py
@@ -13,16 +13,16 @@ python3 -m unittest discover -s .github/scripts -p 'test_*.py'
 python3 .github/scripts/serve.py
 ```
 
-Open <http://127.0.0.1:8765>. The preview binds only to loopback, supports extensionless page URLs, and serves the custom 404. It is a development helper, not a production server.
+Open <http://127.0.0.1:8765>. The development preview binds only to loopback, supports extensionless URLs, and serves the custom 404.
 
-Commit both source templates and the generated HTML. CI runs `build.py --check` to prevent stale output. The Python renderer uses the standard library; it does not download packages or execute content as code.
+Commit the source templates and generated HTML together. CI runs `build.py --check` to prevent stale output. The renderer and checks use only the Python standard library; they do not download packages or execute page content as code. Stylesheet URLs include a content digest to prevent stale cached styles after an update.
 
 ## Publishing
 
-GitHub Pages continues serving the repository root on `master`. `.nojekyll` makes the committed HTML directly deployable without Ruby, Jekyll, plugins, or a custom Actions deployment. `/`, `/research`, `/research.html`, `/talks`, `/talks.html`, `/beta/`, the custom 404, and the Atom feed remain available. GitHub Pages handles the extensionless HTML routes. Existing project websites such as `/rliable/` are separate repositories and are not modified here.
+GitHub Pages continues serving the repository root on `master`. `.nojekyll` publishes the committed HTML without Ruby, Jekyll, plugins, or a custom Actions deployment. `/`, `/research`, `/research.html`, `/talks`, `/talks.html`, `/beta/`, the custom 404, and the Atom feed remain available. GitHub Pages handles the extensionless HTML routes. Existing project websites such as `/rliable/` are separate repositories and are not modified here.
 
-Merge only after reviewing the preview and the `Site checks` workflow. Keep **Enforce HTTPS** enabled in Pages settings. See [the security review](.github/SECURITY-REVIEW.md) for checks performed and hosting limitations.
+Review the `Site checks` workflow before merging. Keep **Enforce HTTPS** enabled in Pages settings. See [the security review](.github/SECURITY-REVIEW.md) for validation and hosting limitations.
 
 ## Licensing
 
-The original site is [MIT licensed](LICENSE).
+The original site is [MIT licensed](LICENSE). Local fonts retain their respective open-font licenses in `css/fonts/`; see [font provenance](.github/FONTS.md).

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render the checked-in static pages using only the Python standard library."""
 import argparse
+import hashlib
 from html import escape
 from pathlib import Path
 from string import Template
@@ -17,11 +18,12 @@ PAGES = {
 
 
 def render():
+    asset_version = hashlib.sha256(b''.join((ROOT / path).read_bytes() for path in ['css/main.css', 'css/fonts.css'])).hexdigest()[:12]
     template = Template((SOURCE / 'layout.html').read_text())
     for filename, (title, path, active, description) in PAGES.items():
         content = (SOURCE / filename).read_text()
         content = template.substitute(
-            title=escape(title), description=escape(description, quote=True),
+            title=escape(title), description=escape(description, quote=True), asset_version=asset_version,
             canonical='https://agarwl.github.io' + path, content=content,
             about_current=' aria-current="page"' if active == 'about' else '',
             research_current=' aria-current="page"' if active == 'research' else '',

@@ -1,36 +1,38 @@
-# Security and functionality review — 2026-09-19
+# Security review — 2026-09-19
 
 ## Scope
 
-Reviewed the checked-out website, its templates, browser dependencies, public response headers, accessible GitHub Pages settings, local resources, and external links. This is a scoped source and browser review, not a guarantee that every vulnerability has been found. Project sites hosted from other repositories under the same origin are outside this change.
+Reviewed this website’s source, templates, browser dependencies, reachable Git history, public response headers, GitHub Pages settings, security alerts, local resources, and external links. The existing layout, typography, colors, content order, and biography are preserved. This is a scoped review, not a guarantee that every vulnerability has been found. Project websites hosted from other repositories under the same origin are outside this change.
 
-## Fixed
+## Code changes
 
-- Removed jQuery 3.1.1, Slideout, old Distill/MathJax/webcomponents loaders, unused bundled JavaScript, and all execution paths for third-party scripts. These were unnecessary for the static content; no replacement framework is introduced.
-- Removed Google Analytics, CDN icon/font styles, external fonts, YouTube iframes, and SlidesLive embeds. Recordings remain ordinary HTTPS links, and local research figures replace embedded players.
-- Added an early CSP on every HTML page, including the 404 and legacy `/beta/` redirect. It denies scripts, frames, network connections, objects, form submissions, and base URL overrides; permits only same-origin CSS and images; and requests upgrades of insecure resources. No inline styles or `unsafe-inline` exceptions.
-- Added `no-referrer` to all pages. External links use the same tab, so there is no new-window opener relationship. Regression checks require `noopener noreferrer` if new-tab links are added.
-- Removed the unbounded Ruby/Jekyll dependency chain, stale templates, and notebook conversion hooks. Plain HTML is published using `.nojekyll`; an optional standard-library Python renderer maintains shared layout. No package installation is needed to render or check the site.
-- Added a read-only CI workflow with a SHA-pinned checkout action, no persisted checkout credentials, and a five-minute timeout; Dependabot maintains the Actions dependency.
-- Fixed malformed markup, missing image descriptions/dimensions, missing favicon, an incorrectly relative project link, HTTP project links, stale Google Brain page titles, and invalid feed/site URLs. Preserved 19 visible research entries and the public content.
-- Removed three broken archival destinations while preserving their talk entries: Edinburgh reading-group and BlueJeans hosts did not resolve; the 2020 ML Collective slides returned 404.
-- Refreshed responsive styling, semantic heading hierarchy, visible keyboard focus, skip navigation, native mobile navigation, light/dark colors, and 404 recovery links.
+- Removed jQuery 3.1.1, Slideout, old Distill/MathJax/webcomponents loaders, unused JavaScript bundles, and execution paths for third-party scripts. The existing hamburger menu now uses native HTML disclosure controls with the same navigation links.
+- Removed Google Analytics and embedded YouTube/SlidesLive players. Existing recordings remain available as links; local research figures occupy the original media columns.
+- Preserved Fira Sans, Raleway, Font Awesome, and Academicons using local font files and local CSS. Removed font/icon CDN requests, the remote stylesheet import, and references to missing EOT/icon assets. Font licenses and SHA-256 provenance are included.
+- Added an early Content Security Policy on every HTML page, including the 404 and legacy `/beta/` redirect. It denies scripts, frames, network connections, objects, form submissions, and base URL overrides; permits only same-origin stylesheets, images, and fonts; and requests upgrades of insecure resources. No inline styles or `unsafe-inline` exceptions are needed.
+- Added `no-referrer` to all pages and `noopener noreferrer` to existing new-tab links. Preserved their original tab-opening behavior.
+- Removed the unbounded Ruby/Jekyll dependency chain, unused templates, and notebook conversion hooks. Plain HTML is published using `.nojekyll`; a standard-library Python renderer maintains the shared layout. Rendering and validation require no downloaded packages.
+- Added a read-only CI workflow with a SHA-pinned checkout action, no persisted checkout credentials, and a five-minute timeout. Dependabot monitors the Actions dependency.
+- Fixed malformed HTML, missing image descriptions/dimensions, missing favicon, an incorrectly relative project link, HTTP project links, stale Google Brain page titles, invalid feed/site URLs, and stylesheet cache invalidation.
+- Removed three broken archival destinations while keeping their talk entries: the Edinburgh reading-group and BlueJeans hosts did not resolve; the 2020 ML Collective slides returned 404.
 
 ## Validation
 
-- Standard-library validator checks every published HTML page, strict CSP, disallowed active content, markup nesting, duplicate IDs, image metadata, internal anchors, local resources, and feed/sitemap/favicon XML.
-- Five regression tests include eleven hostile markup cases, a weakened CSP, missing referrer protection, and malformed HTML. All pass.
+- Every published HTML page passes offline checks for CSP, disallowed active content, markup nesting, duplicate IDs, image metadata, internal anchors, local resources, local-only font URLs, and feed/sitemap/favicon XML.
+- Six regression tests cover eleven hostile markup cases, escaped and remote CSS URLs, a weakened CSP, missing referrer protection, and malformed HTML.
+- Browser checks confirm the original desktop layout, a working native mobile menu at 390px, no horizontal overflow on the homepage or research page at that width, all 19 visible research entries, no broken loaded images, no script/iframe elements, and no console errors.
+- Local HTTP checks return 200 for `/research`, `/talks`, and `/beta/`, and 404 for missing pages. The `/beta/` redirect was also checked in the browser.
 - All 92 unique external links were requested before cleanup: 87 returned successful responses, three broken destinations were removed, LinkedIn returned anti-bot status 999, and ServiceNow returned 403. Successful status codes do not establish that a destination remains publicly usable; some providers return sign-in or challenge pages.
-- Pattern scan of all 367 unique blobs in reachable Git history found no matches for private keys or common GitHub, AWS, Google API, or Slack token formats. This limited scan cannot rule out arbitrary secrets.
-- Browser verification: desktop and narrow layouts, all 19 publication entries, native navigation, no script/iframe elements or external subresources, no console errors, and custom 404 recovery. Local HTTP checks return 200 for `/research`, `/talks`, and `/beta/`, and 404 for missing pages.
-- Live Pages API confirms `https_enforced: true`, source `master` at `/`, and no custom domain.
+- Pattern scanning all 367 unique blobs in reachable Git history found no matches for private keys or common GitHub, AWS, Google API, or Slack token formats. This limited scan cannot rule out arbitrary secrets.
 
-## Hosting and account limitations
+## Verified repository settings
 
-The existing hosting is GitHub Pages. This repository cannot configure arbitrary HTTP response headers there. The live root response did not include CSP, HSTS, `X-Content-Type-Options`, a frame restriction, or Permissions-Policy. The HTML meta CSP supplies supported document protections after deployment, but **`frame-ancestors` cannot be enforced through a meta tag**. No fake `_headers` file or ineffective meta header substitutes are included.
+The owner account confirmed HTTPS enforcement is enabled, with Pages serving the `master` branch at `/` and no custom domain. Dependabot shows 0 open and 0 closed alerts; this does not establish that scripts loaded directly from CDNs were fully inventoried.
 
-If framing protection and additional HTTP headers are required, use a hosting service or reverse proxy that supports response headers, then set a header-based CSP including `frame-ancestors 'none'`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer`, and an appropriate Permissions-Policy. Configure HSTS only after verifying HTTPS for every hostname covered by its policy. A hosting migration or domain change is not part of this patch.
+Private vulnerability reporting, Dependabot malware alerts, and Secret Protection were enabled. Secret scanning currently reports 0 open and 0 closed alerts with no unresolved secrets. Dependency graph, Dependabot alerts, and automatic security updates were already enabled. Push protection remains disabled at the owner’s explicit request. The default branch is not protected. Branch protections and CodeQL setup were not changed; the owner can require the Site checks check after its first successful run.
 
-The CLI/connector account `rishabh_per` is read-only and cannot fork this public repository under its Enterprise Managed User policy. The owner subsequently provided their existing `agarwl` Chrome session. The owner-visible Dependabot page reports **0 open / 0 closed alerts**. This does not establish that legacy scripts loaded directly from CDNs were safe or fully inventoried.
+## Hosting limitations
 
-Through the owner session, private vulnerability reporting and Dependabot malware alerts were enabled and verified. Dependency graph, Dependabot alerts, and automatic security updates were already enabled. Secret Protection was enabled with explicit user approval; its alert page currently reports 0 open / 0 closed alerts and no unresolved secrets. Push protection remains disabled at the owner’s explicit request. Branch protections and CodeQL setup have not been changed. The code changes remain local until publishing is completed.
+GitHub Pages does not let this repository configure arbitrary HTTP response headers. The live root response inspected before this change did not include CSP, HSTS, `X-Content-Type-Options`, a frame restriction, or Permissions-Policy. The HTML meta CSP supplies supported document protections after deployment, but **`frame-ancestors` cannot be enforced through a meta tag**. No ineffective `_headers` file or meta substitutes for header-only controls are included.
+
+Header-based framing protection and additional HTTP headers require a hosting service or reverse proxy with response-header support. A suitable header-based CSP should include `frame-ancestors 'none'`; other useful headers include `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer`, and a restrictive Permissions-Policy. Configure HSTS only after verifying HTTPS for every hostname covered by it. This patch does not migrate hosting or change domains.

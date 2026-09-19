@@ -12,7 +12,7 @@ VOID = set('area base br col embed hr img input link meta param source track wbr
 FORBIDDEN = {'script', 'iframe', 'frame', 'object', 'embed', 'base', 'form', 'style', 'svg', 'math'}
 REQUIRED_CSP = {
     'default-src': "'none'", 'script-src': "'none'", 'style-src': "'self'",
-    'img-src': "'self'", 'font-src': "'none'", 'connect-src': "'none'",
+    'img-src': "'self'", 'font-src': "'self'", 'connect-src': "'none'",
     'frame-src': "'none'", 'object-src': "'none'", 'base-uri': "'none'",
     'form-action': "'none'", 'upgrade-insecure-requests': '',
 }
@@ -79,7 +79,7 @@ class Page(HTMLParser):
                         if tokens[0] in directives: self.errors.append('Duplicate CSP directive')
                         directives[tokens[0]] = tokens[1] if len(tokens) > 1 else ''
                 if directives != REQUIRED_CSP:
-                    self.errors.append('CSP must deny active content and allow only local CSS/images')
+                    self.errors.append('CSP must deny active content and allow only local CSS/images/fonts')
             if a.get('name') == 'referrer': self.referrer = a.get('content') == 'no-referrer'
             if a.get('name') == 'description': self.description = bool(a.get('content'))
         if tag == 'link' and a.get('rel') == 'canonical':
@@ -95,6 +95,25 @@ class Page(HTMLParser):
             self.errors.append(f'Mismatched closing {tag}; expected {self.stack[-1] if self.stack else "none"}')
         else:
             self.stack.pop()
+
+
+def check_css(source):
+    errors = []
+    # Decode escapes before auditing so an escaped scheme or @import is caught.
+    source = re.sub(r'/\*.*?\*/', '', source, flags=re.S)
+    source = re.sub(r'\\([0-9a-fA-F]{1,6})\s?', lambda m: chr(int(m[1], 16)), source)
+    source = re.sub(r'\\(.)', r'\1', source)
+    if re.search(r'@import|expression\s*\(', source, re.I):
+        errors.append('CSS imports and executable expressions are forbidden')
+    for value in re.findall(r'url\s*\(\s*([^)]*?)\s*\)', source, re.I):
+        value = value.strip('\"\' ')
+        url = urlsplit(value)
+        target = (ROOT / unquote(url.path).lstrip('/')).resolve()
+        if url.scheme or url.netloc or not value.startswith('/css/fonts/') or not target.is_relative_to(ROOT / 'css/fonts'):
+            errors.append('Only local font URLs are allowed in CSS: ' + value)
+        elif not target.is_file():
+            errors.append('Missing font: ' + value)
+    return errors
 
 
 def main():
@@ -116,8 +135,7 @@ def main():
             elif url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
                 errors.append(f'{path.relative_to(ROOT)}: Missing anchor {value}')
     for path in ROOT.glob('css/*.css'):
-        if re.search(r'@import|url\s*\(|expression\s*\(', path.read_text(), re.I):
-            errors.append(f'{path.name}: CSS must not import or load other resources')
+        errors.extend(f'{path.name}: {error}' for error in check_css(path.read_text()))
     for name in ['atom.xml', 'sitemap.xml', 'favicon.svg']:
         ET.parse(ROOT / name)
     svg = ET.parse(ROOT / 'favicon.svg')

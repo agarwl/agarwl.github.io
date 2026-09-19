@@ -1,6 +1,6 @@
 """Prove the validator catches security regressions in otherwise valid pages."""
 import unittest
-from check import Page, ROOT
+from check import Page, ROOT, check_css
 
 
 class SecurityChecks(unittest.TestCase):
@@ -36,6 +36,18 @@ class SecurityChecks(unittest.TestCase):
 
     def test_rejects_missing_referrer_policy(self):
         self.assertTrue(Page(self.source.replace('content="no-referrer"', 'content="unsafe-url"')).errors)
+
+    def test_rejects_remote_or_escaped_css_urls(self):
+        for css in [
+            '@import "https://example.com/style.css";',
+            'x { background: url(https://example.com/pixel); }',
+            r'x { background: url(\68ttps://example.com/pixel); }',
+            r'@im\70ort "https://example.com/style.css";',
+            'x { background: url(//example.com/pixel); }',
+            'x { background: url(/css/fonts/../../../private.woff); }',
+        ]:
+            with self.subTest(css=css): self.assertTrue(check_css(css))
+        self.assertFalse(check_css("@font-face { src: url('/css/fonts/FiraSans-Light.woff'); }"))
 
     def test_rejects_malformed_markup(self):
         self.assertTrue(Page(self.injected('<p><div>bad</div></p>')).errors)

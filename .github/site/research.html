@@ -1,131 +1,489 @@
-    <header class="page-intro"><p class="eyebrow">Research</p><h1>Learning from<br>experience<span class="accent">.</span></h1><p class="lead">Reinforcement learning, language models, and the science of making them better.</p><div class="hero-links"><a href="#preprints">Preprints ↓</a><a href="#publications">Selected publications ↓</a><a href="https://scholar.google.ca/citations?user=aH8AJu4AAAAJ&amp;hl=en">Google Scholar ↗</a></div><p class="reading-note">A favorite perspective: <a href="https://fs.blog/great-talks/richard-hamming-your-research/">Richard Hamming on doing research ↗</a></p></header>
-    <section aria-labelledby="preprints"><h2 id="preprints" class="group-heading">Preprints</h2>
-      <article class="publication" aria-labelledby="paper-0">
-        <div class="publication-figure"><img src="/images/research/scalerl.png" width="1036" height="552" loading="lazy" decoding="async" alt="Research overview for The Art of Scaling Reinforcement Learning Compute for LLMs"><div class="paper-links"><a href="https://arxiv.org/abs/2510.13786">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/Devvrit_Khatri/status/1978864275658871099">TweetPrint <span aria-hidden="true">↗</span></a><a href="https://www.notion.so/The-Art-of-Scaling-Reinforcement-Learning-Compute-for-LLMs-28c2af1d07f3801ebc70e6b2bc9102fd">Blog <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-0">The Art of Scaling Reinforcement Learning Compute for LLMs</h3><p>  Devvrit Khatri, Lovish Madaan, ..., David Brandfonbrener, <b>Rishabh Agarwal</b> </p>
-<p> This work provides both a framework to understand RL scaling and a practical recipe to make RL training as predictable as pre-training. RL scaling experiments costing 400K GB200 GPU hours, with a single 100K GPU hour run with predictable scaling. </p></div>
-      </article>
-    </section>
-    <section aria-labelledby="publications"><h2 id="publications" class="group-heading">Selected publications</h2>
-      <article class="publication" aria-labelledby="paper-1">
-        <div class="publication-figure"><img src="/images/research/genrm.png" width="1698" height="580" loading="lazy" decoding="async" alt="Research overview for Generative Verifiers: Reward Modeling as Next-Token Prediction"><div class="paper-links"><a href="https://arxiv.org/abs/2408.15240">ArXiv <span aria-hidden="true">↗</span></a><a href="https://twitter.com/agarwl_/status/1842609385287348712">TweetPrint <span aria-hidden="true">↗</span></a><a href="https://sites.google.com/corp/view/generative-reward-models">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/genrm-star/genrm-critiques/">Data <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-1">Generative Verifiers: Reward Modeling as Next-Token Prediction</h3><p> Lunjun Zhang, Arian Hosseini, Hritik Bansal, Mehran Kazemi, Aviral Kumar, <b>Rishabh Agarwal</b>  <br> ICLR 2025 </p>
-<p> Training generative reward models (GenRM) using next-token prediction, jointly on verification and solution generation. Such generative verifiers can use chain-of-thought (CoT) reasoning,
-      and additional test-time compute via majority voting for better verification. Generative CoT verifiers trained on GSM generalizes to much harder problems in MATH! </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-2">
-        <div class="publication-figure"><img src="/images/research/async_rl.png" width="1040" height="538" loading="lazy" decoding="async" alt="Research overview for Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models"><div class="paper-links"><a href="https://arxiv.org/abs/2410.18252">ArXiv <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-2">Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models</h3><p> Michael Noukhovitch, Shengyi Huang, ..., <b>Rishabh Agarwal</b>, Aaron Courville  <br> ICLR 2025 </p>
-<p> Inspired by classical deep RL, we propose separating generation and learning in RLxF.
-        This enables asynchronous generation of new samples while simultaneously training on old samples, leading to faster training and more compute-optimal scaling. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-3">
-        <div class="publication-figure"><img src="/images/research/spec_kd.png" width="1534" height="808" loading="lazy" decoding="async" alt="Research overview for Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling"><div class="paper-links"><a href="https://arxiv.org/abs/2410.11325">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/WendaXu2/status/1847311997547037023">TweetPrint <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-3">Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling</h3><p> Wenda Xu, ..., <b>Rishabh Agarawl^</b>, Chen-Yu Lee^, Tomas Pfister <br> ICLR 2025 </p>
-<p> An improvement to on-policy distillation where the student proposes tokens, but the teacher replaces tokens outside its top-k tokens to avoid low quality samples. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-4">
-        <div class="publication-figure"><img src="/images/research/compute_optimal_star.png" width="1242" height="590" loading="lazy" decoding="async" alt="Research overview for Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling"><div class="paper-links"><a href="https://arxiv.org/abs/2409.12917">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/hbXNov/status/1829332120696762644">TweetPrint <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-4">Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling</h3><p> Hritik Bansal, Arian Hosseini, <b>Rishabh Agarwal</b>, Vinh Tran, and Mehran Kazemi <br> ICLR 2025 </p>
-<p> Under a fixed inference compute or cost budget, fine-tuning on data generated from a smaller but weaker LLM outperform those trained on stronger but larger models. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-5">
-        <div class="publication-figure"><img src="/images/research/self_correct.png" width="1606" height="516" loading="lazy" decoding="async" alt="Research overview for Training Language Models to Self-Correct via Reinforcement Learning"><div class="paper-links"><a href="https://arxiv.org/abs/2409.12917">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/aviral_kumar2/status/1843414539943194945">TweetPrint <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-5">Training Language Models to Self-Correct via Reinforcement Learning</h3><p> A Kumar*, V Zhuang*, <b>Rishabh Agarwal*</b>, Y Su* et al. <br> ICLR 2025 <span>(Oral) </span> </p>
-<p> A multi-turn online RL approach that teaches an LLM to self-correct using entirely self-generated data. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-6">
-        <div class="publication-figure"><img src="/images/research/many_shot.png" width="2566" height="896" loading="lazy" decoding="async" alt="Research overview for Many-Shot In-Context Learning"><div class="paper-links"><a href="https://arxiv.org/abs/2404.11018">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/arianTBD/status/1757121513621229829?s=20">TweetPrint <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-6">Many-Shot In-Context Learning</h3><p> <b>Rishabh Agarwal*</b>, Avi Singh*, Lei M. Zhang, Bernd Bohnet, Luis Rosias, Stephanie Chan et al. <br> NeurIPS 2024 <span>(Spotlight), <span>Oral</span>@ICML Long-Context Workshop </span></p>
-<p> Explores ICL with hundreds or thousands of examples. Unlike few-shot learning, many-shot learning is
-      effective at overriding pretraining biases, can learn high-dimensional functions with numerical inputs, and performs comparably to fine-tuning. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-7">
-        <div class="publication-figure"><img src="/images/research/stop_regressing.png" width="1476" height="550" loading="lazy" decoding="async" alt="Research overview for Stop Regressing: Training Value Functions via Classification for Scalable Deep RL"><div class="paper-links"><a href="https://arxiv.org/abs/2403.03950">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/JesseFarebro/status/1765762861509345578">TweetPrint <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-7">Stop Regressing: Training Value Functions via Classification for Scalable Deep RL</h3><p> Jesse Farebrother*, Jordi Orbay, ..., Pablo Castro, Aviral Kumar, <b>Rishabh Agarwal*</b> <br> ICML 2024 <span>(Oral) </span></p>
-<p> Training value functions with categorical cross-entropy can substantially improve the scalability and generalizability of deep RL at little-to-no cost. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-8">
-        <div class="publication-figure"><img src="/images/research/vstar_math.jpeg" width="1199" height="459" loading="lazy" decoding="async" alt="Research overview for V-STaR: Training Verifiers for Self-Taught Reasoners"><div class="paper-links"><a href="https://arxiv.org/abs/2402.06457">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/arianTBD/status/1757121513621229829?s=20">TweetPrint <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-8">V-STaR: Training Verifiers for Self-Taught Reasoners</h3><p> Arian Hosseini, Xingdi Yuan, Nikolay Malkin, Aaron Courville, Alessandro Sordoni, <b>Rishabh Agarwal</b> <br> CoLM 2024 </p>
-<p> Self-improvement approaches, such as ReST^EM and STaR, discard all the LLM-generated incorrect solutions during training. V-STaR
-      augments such approaches by training a verifier using both correct and incorrect solutions, used at test-time for re-ranking LLM generations. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-9">
-        <div class="publication-figure"><img src="/images/research/rest_math.jpeg" width="1274" height="852" loading="lazy" decoding="async" alt="Research overview for Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models"><div class="paper-links"><a href="https://arxiv.org/abs/2312.06585">ArXiv <span aria-hidden="true">↗</span></a><a href="https://x.com/avisingh599/status/1734603680933192089?s=20">TweetPrint <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-9">Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models</h3><p> <b> Avi Singh*, JD Coreyes*, Rishabh Agarwal*</b> et al. <br> TMLR 2024 </p>
-<p> We explore whether we can go beyond human data on tasks where we have access to scalar feedback, finding that
-      a simple self-training method based on expectation-maximization can substantially reduce dependence on human-generated data. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-10">
-        <div class="publication-figure"><img src="/images/research/gkd.png" width="1645" height="639" loading="lazy" decoding="async" alt="Research overview for On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes"><div class="paper-links"><a href="https://arxiv.org/abs/2306.13649">ArXiv <span aria-hidden="true">↗</span></a><a href="https://twitter.com/agarwl_/status/1674516600551088135?s=20">TweetPrint <span aria-hidden="true">↗</span></a><a href="https://huggingface.co/docs/trl/en/gkd_trainer">Code <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-10">On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes</h3><p> <b>Rishabh Agarwal*</b>, Nino Vieillard*, Piotr Stanczyk, Sabela Ramos, Matthieu Geist, Olivier Bachem <br> ICLR 2024 </p>
-<p> GKD tackles distribution-mismatch in distilling autoregressive models, and outperforms commonly-used approaches on distilling LLMs for
-      summarization, translation and reasoning tasks. <span> Used for post-training distillation for <a href="https://arxiv.org/abs/2408.00118">Gemma 2</a>,<a href="https://storage.googleapis.com/deepmind-media/gemma/Gemma3Report.pdf">Gemma 3, and Qwen-3 Thinking </a>. </span> </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-11">
-        <div class="publication-figure"><img src="/images/research/bbf.png" width="704" height="354" loading="lazy" decoding="async" alt="Research overview for Bigger, Better, Faster: Human-level Atari with human-level efficiency"><div class="paper-links"><a href="https://arxiv.org/abs/2305.19452">ArXiv <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-11">Bigger, Better, Faster: Human-level Atari with human-level efficiency</h3><p> Max Schwarzer, Johan Obando-Ceron, Aaron Courville, Marc Bellemare, Pablo Samuel Castro*, <b>Rishabh Agarwal*</b> <br>
+<div class="research-intro">
+  Here's my <a href="https://scholar.google.ca/citations?user=aH8AJu4AAAAJ&amp;hl=en">Google Scholar</a>. Here's <a href="https://fs.blog/great-talks/richard-hamming-your-research/">how one should do research</a> according to <a href="https://en.wikipedia.org/wiki/Richard_Hamming">Richard Hamming</a>. <br>
+  Jump to <a href="#preprints">preprints</a> or <a href="#publications"> selected publications.</a>
+</div>
+
+<h2 id="preprints" class="page-heading">Preprints
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/scalerl.png" class="research-image" alt="Research overview: The Art of Scaling Reinforcement Learning Compute for LLMs" loading="lazy" decoding="async" width="1036" height="552">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2510.13786">ArXiv</a></td>
+          <td><a href="https://x.com/Devvrit_Khatri/status/1978864275658871099">TweetPrint</a></td>
+          <td><a href="https://www.notion.so/The-Art-of-Scaling-Reinforcement-Learning-Compute-for-LLMs-28c2af1d07f3801ebc70e6b2bc9102fd">Blog</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+      <b> The Art of Scaling Reinforcement Learning Compute for LLMs </b>
+      <p>  Devvrit Khatri, Lovish Madaan, ..., David Brandfonbrener, <b>Rishabh Agarwal</b> </p>
+      <p> This work provides both a framework to understand RL scaling and a practical recipe to make RL training as predictable as pre-training. RL scaling experiments costing 400K GB200 GPU hours, with a single 100K GPU hour run with predictable scaling. </p>
+    </div>
+  </div>
+
+<div class="divider"></div>
+
+
+
+
+
+
+
+
+
+
+<h2 id="publications" class="page-heading"> Selected Publications
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/genrm.png" class="research-image" alt="Research overview: Generative Verifiers: Reward Modeling as Next-Token Prediction" loading="lazy" decoding="async" width="1698" height="580">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2408.15240">ArXiv</a></td>
+          <td><a href="https://twitter.com/agarwl_/status/1842609385287348712">TweetPrint</a></td>
+          <td><a href="https://sites.google.com/corp/view/generative-reward-models">Website</a></td>
+          <td><a href="https://github.com/genrm-star/genrm-critiques/">Data</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+      <b> Generative Verifiers: Reward Modeling as Next-Token Prediction </b>
+      <p> Lunjun Zhang, Arian Hosseini, Hritik Bansal, Mehran Kazemi, Aviral Kumar, <b>Rishabh Agarwal</b>  <br> ICLR 2025 </p>
+      <p> Training generative reward models (GenRM) using next-token prediction, jointly on verification and solution generation. Such generative verifiers can use chain-of-thought (CoT) reasoning,
+      and additional test-time compute via majority voting for better verification. Generative CoT verifiers trained on GSM generalizes to much harder problems in MATH! </p>
+    </div>
+  </div>
+
+<div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/async_rl.png" class="research-image" alt="Research overview: Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models" loading="lazy" decoding="async" width="1040" height="538">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2410.18252">ArXiv</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+      <b> Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models </b>
+      <p> Michael Noukhovitch, Shengyi Huang, ..., <b>Rishabh Agarwal</b>, Aaron Courville  <br> ICLR 2025 </p>
+      <p> Inspired by classical deep RL, we propose separating generation and learning in RLxF.
+        This enables asynchronous generation of new samples while simultaneously training on old samples, leading to faster training and more compute-optimal scaling. </p>
+    </div>
+  </div>
+
+<div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/spec_kd.png" class="research-image" alt="Research overview: Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling" loading="lazy" decoding="async" width="1534" height="808">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2410.11325">ArXiv</a></td>
+          <td><a href="https://x.com/WendaXu2/status/1847311997547037023">TweetPrint</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+      <b> Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling </b>
+      <p> Wenda Xu, ..., <b>Rishabh Agarawl^</b>, Chen-Yu Lee^, Tomas Pfister <br> ICLR 2025 </p>
+      <p> An improvement to on-policy distillation where the student proposes tokens, but the teacher replaces tokens outside its top-k tokens to avoid low quality samples. </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/compute_optimal_star.png" class="research-image" alt="Research overview: Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling" loading="lazy" decoding="async" width="1242" height="590">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2409.12917">ArXiv</a></td>
+          <td><a href="https://x.com/hbXNov/status/1829332120696762644">TweetPrint</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+      <b> Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling </b>
+      <p> Hritik Bansal, Arian Hosseini, <b>Rishabh Agarwal</b>, Vinh Tran, and Mehran Kazemi <br> ICLR 2025 </p>
+      <p> Under a fixed inference compute or cost budget, fine-tuning on data generated from a smaller but weaker LLM outperform those trained on stronger but larger models. </p>
+    </div>
+  </div>
+
+<div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/self_correct.png" class="research-image" alt="Research overview: Training Language Models to Self-Correct via Reinforcement Learning" loading="lazy" decoding="async" width="1606" height="516">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2409.12917">ArXiv</a></td>
+          <td><a href="https://x.com/aviral_kumar2/status/1843414539943194945">TweetPrint</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+      <b> Training Language Models to Self-Correct via Reinforcement Learning </b>
+      <p> A Kumar*, V Zhuang*, <b>Rishabh Agarwal*</b>, Y Su* et al. <br> ICLR 2025 <span class="paper-highlight">(Oral) </span> </p>
+      <p> A multi-turn online RL approach that teaches an LLM to self-correct using entirely self-generated data. </p>
+    </div>
+  </div>
+
+<div class="divider"></div>
+
+
+
+<div class="row">
+    <div class="six columns">
+      <img src="/images/research/many_shot.png" class="research-image" alt="Research overview: Many-Shot In-Context Learning" loading="lazy" decoding="async" width="2566" height="896">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2404.11018">ArXiv</a></td>
+          <td><a href="https://x.com/arianTBD/status/1757121513621229829?s=20">TweetPrint</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+      <b> Many-Shot In-Context Learning </b>
+      <p> <b>Rishabh Agarwal*</b>, Avi Singh*, Lei M. Zhang, Bernd Bohnet, Luis Rosias, Stephanie Chan et al. <br> NeurIPS 2024 <span class="paper-highlight">(Spotlight), <span class="paper-highlight">Oral</span>@ICML Long-Context Workshop </span></p>
+    <p> Explores ICL with hundreds or thousands of examples. Unlike few-shot learning, many-shot learning is
+      effective at overriding pretraining biases, can learn high-dimensional functions with numerical inputs, and performs comparably to fine-tuning. </p>
+    </div>
+  </div>
+
+<div class="divider"></div>
+
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/stop_regressing.png" class="research-image" alt="Research overview: Stop Regressing: Training Value Functions via Classification for Scalable Deep RL" loading="lazy" decoding="async" width="1476" height="550">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2403.03950">ArXiv</a></td>
+          <td><a href="https://x.com/JesseFarebro/status/1765762861509345578">TweetPrint</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Stop Regressing: Training Value Functions via Classification for Scalable Deep RL </b>
+      <p> Jesse Farebrother*, Jordi Orbay, ..., Pablo Castro, Aviral Kumar, <b>Rishabh Agarwal*</b> <br> ICML 2024 <span class="paper-highlight">(Oral) </span></p>
+    <p> Training value functions with categorical cross-entropy can substantially improve the scalability and generalizability of deep RL at little-to-no cost. </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/vstar_math.jpeg" class="research-image" alt="Research overview: V-STaR: Training Verifiers for Self-Taught Reasoners" loading="lazy" decoding="async" width="1199" height="459">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2402.06457">ArXiv</a></td>
+          <td><a href="https://x.com/arianTBD/status/1757121513621229829?s=20">TweetPrint</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> V-STaR: Training Verifiers for Self-Taught Reasoners </b>
+      <p> Arian Hosseini, Xingdi Yuan, Nikolay Malkin, Aaron Courville, Alessandro Sordoni, <b>Rishabh Agarwal</b> <br> CoLM 2024 </p>
+    <p> Self-improvement approaches, such as ReST^EM and STaR, discard all the LLM-generated incorrect solutions during training. V-STaR
+      augments such approaches by training a verifier using both correct and incorrect solutions, used at test-time for re-ranking LLM generations. </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/rest_math.jpeg" class="research-image" alt="Research overview: Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models" loading="lazy" decoding="async" width="1274" height="852">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2312.06585">ArXiv</a></td>
+          <td><a href="https://x.com/avisingh599/status/1734603680933192089?s=20">TweetPrint</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models </b>
+      <p> <b> Avi Singh*, JD Coreyes*, Rishabh Agarwal*</b> et al. <br> TMLR 2024 </p>
+    <p> We explore whether we can go beyond human data on tasks where we have access to scalar feedback, finding that
+      a simple self-training method based on expectation-maximization can substantially reduce dependence on human-generated data. </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/gkd.png" class="research-image" alt="Research overview: On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes" loading="lazy" decoding="async" width="1645" height="639">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2306.13649">ArXiv</a></td>
+          <td><a href="https://twitter.com/agarwl_/status/1674516600551088135?s=20">TweetPrint</a></td>
+          <td><a href="https://huggingface.co/docs/trl/en/gkd_trainer">Code</a></td>
+
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes </b>
+      <p> <b>Rishabh Agarwal*</b>, Nino Vieillard*, Piotr Stanczyk, Sabela Ramos, Matthieu Geist, Olivier Bachem <br> ICLR 2024 </p>
+    <p> GKD tackles distribution-mismatch in distilling autoregressive models, and outperforms commonly-used approaches on distilling LLMs for
+      summarization, translation and reasoning tasks. <span class="paper-highlight"> Used for post-training distillation for <a href="https://arxiv.org/abs/2408.00118">Gemma 2</a>,<a href="https://storage.googleapis.com/deepmind-media/gemma/Gemma3Report.pdf">Gemma 3, and Qwen-3 Thinking </a>. </span> </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/bbf.png" class="research-image" alt="Research overview: Bigger, Better, Faster: Human-level Atari with human-level efficiency" loading="lazy" decoding="async" width="704" height="354">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2305.19452">ArXiv</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Bigger, Better, Faster: Human-level Atari with human-level efficiency </b>
+      <p> Max Schwarzer, Johan Obando-Ceron, Aaron Courville, Marc Bellemare, Pablo Samuel Castro*, <b>Rishabh Agarwal*</b> <br>
       ICML 2023 </p>
-<p> With scaling compute and model size along with appropriate design choices, value-based methods achieve super-human performance in the Atari 100K, while being 4x compute efficient than SOTA.
-    </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-12">
-        <div class="publication-figure"><img src="/images/research/scaled_ql.gif" width="1513" height="550" loading="lazy" decoding="async" alt="Research overview for Offline Q-Learning on Diverse Multi-Task Data Both Scales And Generalizes"><div class="paper-links"><a href="https://arxiv.org/abs/2211.15144">ArXiv <span aria-hidden="true">↗</span></a><a href="https://ai.googleblog.com/2023/02/pre-training-generalist-agents-using.html">Blog <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-12">Offline Q-Learning on Diverse Multi-Task Data Both Scales And Generalizes</h3><p> Aviral Kumar, <b>Rishabh Agarwal</b>, Xinyang Geng, George Tucker, Sergey Levine <br>
-      ICLR 2023 (<span>Top 5%</span>), NeurIPS 2022 DRL Workshop <span>Best paper Runner-up</span> </p>
-<p> With appropriate design choices, offline Q-learning exhibit strong performance that scales with model capacity. The secret ingredients
+    <p> With scaling compute and model size along with appropriate design choices, value-based methods achieve super-human performance in the Atari 100K, while being 4x compute efficient than SOTA.
+    </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/scaled_ql.gif" class="research-image" alt="Research overview: Offline Q-Learning on Diverse Multi-Task Data Both Scales And Generalizes" loading="lazy" decoding="async" width="1513" height="550">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2211.15144">ArXiv</a></td>
+          <td><a href="https://ai.googleblog.com/2023/02/pre-training-generalist-agents-using.html"> Blog </a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Offline Q-Learning on Diverse Multi-Task Data Both Scales And Generalizes </b>
+      <p> Aviral Kumar, <b>Rishabh Agarwal</b>, Xinyang Geng, George Tucker, Sergey Levine <br>
+      ICLR 2023 (<span class="paper-highlight">Top 5%</span>), NeurIPS 2022 DRL Workshop <span class="paper-highlight">Best paper Runner-up</span> </p>
+    <p> With appropriate design choices, offline Q-learning exhibit strong performance that scales with model capacity. The secret ingredients
       were training on a large and diverse offline dataset with ResNets, distributional C51 backups and feature normalization (that is make RL training look more like SL).
-    </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-13">
-        <div class="publication-figure"><img src="/images/research/RRL.gif" width="1398" height="725" loading="lazy" decoding="async" alt="Research overview for Beyond Tabula Rasa: Reincarnating Reinforcement Learning"><div class="paper-links"><a href="https://arxiv.org/abs/2206.01626">ArXiv <span aria-hidden="true">↗</span></a><a href="https://agarwl.github.io/reincarnating_rl">Website <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-13">Beyond Tabula Rasa: Reincarnating Reinforcement Learning</h3><p> <b>Rishabh Agarwal</b>, Max Schwarzer, Pablo Samuel Castro, Aaron Courville, Marc G. Bellemare <br>
+    </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/RRL.gif" class="research-image" alt="Research overview: Beyond Tabula Rasa: Reincarnating Reinforcement Learning" loading="lazy" decoding="async" width="1398" height="725">
+
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2206.01626">ArXiv</a></td>
+          <td><a href="https://agarwl.github.io/reincarnating_rl"> Website </a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Beyond Tabula Rasa: Reincarnating Reinforcement Learning </b>
+      <p> <b>Rishabh Agarwal</b>, Max Schwarzer, Pablo Samuel Castro, Aaron Courville, Marc G. Bellemare <br>
       NeurIPS 2022 </p>
-<p> This work proposes an alternative research workflow to tabula rasa RL, where prior computational work (e.g., learned policies) is transferred from agent to another.
-    </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-14">
-        <div class="publication-figure"><img src="/images/research/rliable_atari100k.jpeg" width="1310" height="808" loading="lazy" decoding="async" alt="Research overview for Deep RL at the Edge of the Statistical Precipice"><div class="paper-links"><a href="https://agarwl.github.io/rliable">Website <span aria-hidden="true">↗</span></a><a href="https://twitter.com/agarwl_/status/1432800830621687817?s=20">#TweePrint <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2108.13264">ArXiv <span aria-hidden="true">↗</span></a><a href="https://github.com/google-research/rliable">Library <span aria-hidden="true">↗</span></a><a href="https://www.youtube.com/watch?v=XSY9JwqD-bw">Watch talk <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-14">Deep RL at the Edge of the Statistical Precipice</h3><p> <b>Rishabh Agarwal</b>, Max Schwarzer, Pablo Samuel Castro, Aaron Courville, Marc G. Bellemare <br>
-      NeurIPS 2021 (<span>Outstanding Paper Award</span>) </p>
-<p> Our findings call for a change in how we evaluate performance on deep RL benchmarks, for which we present more reliable protocols and an
+    <p> This work proposes an alternative research workflow to tabula rasa RL, where prior computational work (e.g., learned policies) is transferred from agent to another.
+    </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <div class="row">
+    <div class="six columns">
+
+     <a href="https://www.youtube.com/watch?v=XSY9JwqD-bw" aria-label="Watch the talk: Deep RL at the Edge of the Statistical Precipice"><img src="/images/research/rliable_atari100k.jpeg" alt="Deep RL evaluation results" loading="lazy" decoding="async" width="1310" height="808"></a>
+      <table>
+        <tr>
+          <td><a href="https://agarwl.github.io/rliable">Website</a></td>
+          <td><a href="https://twitter.com/agarwl_/status/1432800830621687817?s=20">#TweePrint</a></td>
+          <td><a href="https://arxiv.org/abs/2108.13264">ArXiv</a></td>
+          <td><a href="https://github.com/google-research/rliable">Library</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Deep RL at the Edge of the Statistical Precipice</b>
+      <p> <b>Rishabh Agarwal</b>, Max Schwarzer, Pablo Samuel Castro, Aaron Courville, Marc G. Bellemare <br>
+      NeurIPS 2021 (<span class="paper-highlight">Outstanding Paper Award</span>) </p>
+
+    <p> Our findings call for a change in how we evaluate performance on deep RL benchmarks, for which we present more reliable protocols and an
       <a href="https://github.com/google-research/rliable"> open-source library </a>, easily applicable with *even a handful of runs*, to prevent unreliable results
         from stagnating the field.
-    </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-15">
-        <div class="publication-figure"><img src="/images/research/behavioral_similarity.png" width="682" height="336" loading="lazy" decoding="async" alt="Research overview for Contrastive Behavioral Similarity Embeddings for Generalization in Reinforcement Learning"><div class="paper-links"><a href="https://agarwl.github.io/pse">Website <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2101.05265">Paper <span aria-hidden="true">↗</span></a><a href="https://slideslive.com/38942373">Talk <span aria-hidden="true">↗</span></a><a href="https://slideslive.com/38953630">ICLR recording <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-15">Contrastive Behavioral Similarity Embeddings for Generalization in Reinforcement Learning</h3><p> <b>Rishabh Agarwal</b>, Marlos C. Machado, Pablo Samuel Castro, Marc G. Bellemare <br>
-      ICLR 2021 (<span>Spotlight</span>) </p>
-<p> To improve generalization, we learn representations, via a contrastive loss, that puts states together with similar long-term optimal behavior. This is orthogonal to existing
-    approaches such as data augmentation. An earlier version was accepted as an oral presentation at NeurIPS 2020 Workshop on Biological and Artificial RL. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-16">
-        <div class="publication-figure"><img src="/images/research/iup.png" width="5555" height="1444" loading="lazy" decoding="async" alt="Research overview for Implicit Under-Parameterization Inhibits Data-Efficient Deep Reinforcement Learning"><div class="paper-links"><a href="https://agarwl.github.io/iup">Website <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2010.14498">ArXiv <span aria-hidden="true">↗</span></a><a href="https://www.youtube.com/watch?v=dgnpGl2iNw8">Talk <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-16">Implicit Under-Parameterization Inhibits Data-Efficient Deep Reinforcement Learning</h3><p> Aviral Kumar*, <b>Rishabh Agarwal*</b>, Dibya Ghosh, Sergey Levine <br> ICLR 2021 </p>
-<p> We identify an implicit under-parameterization phenomenon in value-based deep RL methods that use bootstrapping: when value functions,
+    </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+
+
+
+
+  <div class="row">
+    <div class="six columns">
+
+      <a href="https://slideslive.com/38953630" aria-label="Watch the ICLR talk on behavioral similarity embeddings"><img src="/images/research/behavioral_similarity.png" alt="Behavioral similarity embeddings" loading="lazy" decoding="async" width="682" height="336"></a>
+
+
+      <table>
+        <tr>
+          <td><a href="https://agarwl.github.io/pse">Website</a></td>
+          <td><a href="https://arxiv.org/abs/2101.05265">Paper</a></td>
+          <td><a href="https://slideslive.com/38942373">Talk</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Contrastive Behavioral Similarity Embeddings for Generalization in Reinforcement Learning </b>
+      <p> <b>Rishabh Agarwal</b>, Marlos C. Machado, Pablo Samuel Castro, Marc G. Bellemare <br>
+      ICLR 2021 (<span class="paper-highlight">Spotlight</span>) </p>
+    <p> To improve generalization, we learn representations, via a contrastive loss, that puts states together with similar long-term optimal behavior. This is orthogonal to existing
+    approaches such as data augmentation. An earlier version was accepted as an oral presentation at NeurIPS 2020 Workshop on Biological and Artificial RL. </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/iup.png" class="research-image" alt="Research overview: Implicit Under-Parameterization Inhibits Data-Efficient Deep Reinforcement Learning" loading="lazy" decoding="async" width="5555" height="1444">
+      <table>
+        <tr>
+          <td><a href="https://agarwl.github.io/iup">Website</a></td>
+          <td><a href="https://arxiv.org/abs/2010.14498">ArXiv</a></td>
+          <td><a href="https://www.youtube.com/watch?v=dgnpGl2iNw8">Talk</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> Implicit Under-Parameterization Inhibits Data-Efficient Deep Reinforcement Learning </b>
+      <p> Aviral Kumar*, <b>Rishabh Agarwal*</b>, Dibya Ghosh, Sergey Levine <br> ICLR 2021 </p>
+    <p> We identify an implicit under-parameterization phenomenon in value-based deep RL methods that use bootstrapping: when value functions,
       approximated using deep neural networks, are trained with gradient descent using iterated regression onto target values generated by
-      previous instances of the value network, more gradient updates decrease the expressivity of the current value network. </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-17">
-        <div class="publication-figure"><img src="/images/research/rl_unplugged.png" width="5683" height="1700" loading="lazy" decoding="async" alt="Research overview for RL Unplugged: Benchmarks for Offline Reinforcement Learning"><div class="paper-links"><a href="https://arxiv.org/abs/2006.13888">ArXiv <span aria-hidden="true">↗</span></a><a href="https://github.com/deepmind/deepmind-research/tree/master/rl_unplugged">Code <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-17">RL Unplugged: Benchmarks for Offline Reinforcement Learning</h3><p> Caglar Gulcehre, Ziyu Wang, Alexander Novikov, Tom Le Paine, Sergio Gómez Colmenarejo, Konrad Zolna, <b>Rishabh Agarwal</b>,
+      previous instances of the value network, more gradient updates decrease the expressivity of the current value network. </p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="row">
+    <div class="six columns">
+      <img src="/images/research/rl_unplugged.png" class="research-image" alt="Research overview: RL Unplugged: Benchmarks for Offline Reinforcement Learning" loading="lazy" decoding="async" width="5683" height="1700">
+      <table>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2006.13888">ArXiv</a></td>
+          <td><a href="https://github.com/deepmind/deepmind-research/tree/master/rl_unplugged">Code</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="six columns">
+
+      <b> RL Unplugged: Benchmarks for Offline Reinforcement Learning </b>
+      <p> Caglar Gulcehre, Ziyu Wang, Alexander Novikov, Tom Le Paine, Sergio Gómez Colmenarejo, Konrad Zolna, <b>Rishabh Agarwal</b>,
         Josh Merel, Daniel Mankowitz, Cosmin Paduraru, Gabriel Dulac-Arnold, Jerry Li, Mohammad Norouzi, Matt Hoffman, Ofir Nachum,
         George Tucker, Nicolas Heess, Nando de Freitas <br> NeurIPS 2020 </p>
-<p> We propose a benchmark called RL Unplugged to evaluate and compare offline RL methods on a diverse range of domains. We provide detailed evaluation
+    <p> We propose a benchmark called RL Unplugged to evaluate and compare offline RL methods on a diverse range of domains. We provide detailed evaluation
       protocols for each domain and provide an extensive analysis of existing methods using these protocols. We hope that our suite of benchmarks will
       increase the reproducibility in offline RL and make it possible to study challenging tasks with a limited computational budget, thus making RL research
       both more systematic and more accessible across the community.
-    </p></div>
-      </article>
-      <article class="publication" aria-labelledby="paper-18">
-        <div class="publication-figure"><img src="/images/research/OFFLINE_RL.gif" width="1600" height="1200" loading="lazy" decoding="async" alt="Research overview for An Optimistic Perspective on Offline Reinforcement Learning"><div class="paper-links"><a href="https://arxiv.org/abs/1907.04543">ArXiv <span aria-hidden="true">↗</span></a><a href="https://offline-rl.github.io">Website <span aria-hidden="true">↗</span></a><a href="https://slideslive.com/38922701/contributed-talk-striving-for-simplicity-in-offpolicy-deep-reinforcement-learning">Talk <span aria-hidden="true">↗</span></a></div></div>
-        <div class="publication-copy"><h3 id="paper-18">An Optimistic Perspective on Offline Reinforcement Learning</h3><p> <b>Rishabh Agarwal</b>, Dale Schuurmans, Mohammad Norouzi <br>
-      ICML 2020 (<span>Talk</span>)</p>
-<p> This paper popularized offline RL and showed that standard off-policy algorithms perform quite well in the fully
+    </p>
+    </div>
+  </div>
+
+ <div class="divider"></div>
+
+
+ <div class="row">
+  <div class="six columns">
+    <img src="/images/research/OFFLINE_RL.gif" class="research-image" alt="Research overview: An Optimistic Perspective on Offline Reinforcement Learning" loading="lazy" decoding="async" width="1600" height="1200">
+    <table>
+      <tr>
+        <td><a href="https://arxiv.org/abs/1907.04543">ArXiv</a></td>
+        <td><a href="https://offline-rl.github.io">Website</a></td>
+        <td><a href="https://slideslive.com/38922701/contributed-talk-striving-for-simplicity-in-offpolicy-deep-reinforcement-learning">Talk</a></td>
+      </tr>
+    </table>
+  </div>
+
+    <div class="six columns">
+
+      <b> An Optimistic Perspective on Offline Reinforcement Learning</b>
+      <p> <b>Rishabh Agarwal</b>, Dale Schuurmans, Mohammad Norouzi <br>
+      ICML 2020 (<span class="paper-highlight">Talk</span>)</p>
+    <p> This paper popularized offline RL and showed that standard off-policy algorithms perform quite well in the fully
       off-policy / offline deep RL setting with large and diverse datasets. A previous version was titled "Striving for Simplicity in Off-Policy Deep Reinforcement Learning"
       and presented as a contributed talk at NeurIPS 2019 DRL workshop.
-    </p></div>
-      </article>
-    </section>
+    </p>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</h2>
+</h2>
