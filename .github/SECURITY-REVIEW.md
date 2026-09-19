@@ -2,7 +2,7 @@
 
 ## Scope
 
-Reviewed this website’s source, templates, browser dependencies, reachable Git history, public response headers, GitHub Pages settings, security alerts, local resources, and external links. The existing layout, typography, colors, content order, and biography are preserved. This is a scoped review, not a guarantee that every vulnerability has been found. Project websites hosted from other repositories under the same origin are outside this change.
+Reviewed this website’s source, templates, browser dependencies, reachable Git history, public response headers, GitHub Pages settings, security alerts, local resources, and external links. The existing site structure, typography, colors, content order, and biography are preserved, with small spacing and mobile wrapping refinements. This is a scoped review, not a guarantee that every vulnerability has been found. Project websites hosted from other repositories under the same origin are outside this change.
 
 ## Code changes
 
@@ -13,6 +13,7 @@ Reviewed this website’s source, templates, browser dependencies, reachable Git
 - Added `no-referrer` to all pages and `noopener noreferrer` to existing new-tab links. Preserved their original tab-opening behavior.
 - Removed the unbounded Ruby/Jekyll dependency chain, unused templates, and notebook conversion hooks. Plain HTML is published using `.nojekyll`; a standard-library Python renderer maintains the shared layout. Rendering and validation require no downloaded packages.
 - Added a read-only CI workflow with a SHA-pinned checkout action, no persisted checkout credentials, and a five-minute timeout. Dependabot monitors the Actions dependency.
+- Tightened header spacing, improved list readability and footer wrapping, and made research-link rows wrap on narrow screens without changing the desktop columns.
 - Fixed malformed HTML, missing image descriptions/dimensions, missing favicon, an incorrectly relative project link, HTTP project links, stale Google Brain page titles, invalid feed/site URLs, and stylesheet cache invalidation.
 - Removed three broken archival destinations while keeping their talk entries: the Edinburgh reading-group and BlueJeans hosts did not resolve; the 2020 ML Collective slides returned 404.
 
@@ -20,7 +21,7 @@ Reviewed this website’s source, templates, browser dependencies, reachable Git
 
 - Every published HTML page passes offline checks for CSP, disallowed active content, markup nesting, duplicate IDs, image metadata, internal anchors, local resources, local-only font URLs, and feed/sitemap/favicon XML.
 - Six regression tests cover eleven hostile markup cases, escaped and remote CSS URLs, a weakened CSP, missing referrer protection, and malformed HTML.
-- Browser checks confirm the original desktop layout, a working native mobile menu at 390px, no horizontal overflow on the homepage or research page at that width, all 19 visible research entries, no broken loaded images, no script/iframe elements, and no console errors.
+- Browser checks confirm the original desktop layout, a working native mobile menu at 320px and 390px, no horizontal overflow on the homepage or research page at those widths, all 19 visible research entries, no broken loaded images, no script/iframe elements, and no console errors.
 - Local HTTP checks return 200 for `/research`, `/talks`, and `/beta/`, and 404 for missing pages. The `/beta/` redirect was also checked in the browser.
 - All 92 unique external links were requested before cleanup: 87 returned successful responses, three broken destinations were removed, LinkedIn returned anti-bot status 999, and ServiceNow returned 403. Successful status codes do not establish that a destination remains publicly usable; some providers return sign-in or challenge pages.
 - Pattern scanning all 367 unique blobs in reachable Git history found no matches for private keys or common GitHub, AWS, Google API, or Slack token formats. This limited scan cannot rule out arbitrary secrets.

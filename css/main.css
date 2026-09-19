@@ -1370,3 +1370,30 @@ a:focus-visible, summary:focus-visible { outline: 2px solid #1756a9; outline-off
   .mobile-menu nav { position: absolute; top: 46px; left: 0; width: 150px; padding: 15px; background: #e8e8e8; border: 1px solid #ddd; }
   .mobile-menu nav a { display: block; padding: 8px; color: #111; }
 }
+
+/* Small spacing refinements; keep the existing academic-site structure. */
+.site-header { margin-bottom: 32px; }
+.site-header .desktop-menu a[aria-current="page"] { text-decoration: underline; text-underline-offset: 5px; }
+#main p, #main > ul { line-height: 1.65; }
+#main > h3 { margin-top: 28px; }
+#main > ul > li + li { margin-top: 6px; }
+#profile_picture { border-radius: 4px; }
+.site-footer .social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.site-footer .social-links a:not(:first-child) { margin-left: 0; }
+.site-footer .email-link { overflow-wrap: anywhere; }
+@media screen and (min-width: 550px) {
+  .site-header { margin-top: 24px; margin-bottom: 40px; }
+  .site-header .site-title { padding-top: .65em; }
+}
+@media screen and (max-width: 549px) {
+  .site-header .site-title { padding-top: 12px; }
+  .mobile-menu { width: 44px; }
+  .mobile-menu summary { min-width: 44px; min-height: 44px; font-size: 28px; line-height: 44px; }
+  #profile_picture { margin-top: 12px; margin-bottom: 6px; }
+  .divider, .invisible-divider { margin-top: 2em; margin-bottom: 1.5em; }
+}
+@media screen and (max-width: 549px) {
+  #main .six.columns table, #main .six.columns tbody { display: block; max-width: 100%; }
+  #main .six.columns tr { display: flex; flex-wrap: wrap; }
+  #main .six.columns td { display: block; }
+}
