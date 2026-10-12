@@ -17,6 +17,8 @@ Open <http://127.0.0.1:8765>. The development preview binds only to loopback, su
 
 Commit the source templates and generated HTML together. CI runs `build.py --check` to prevent stale output. The renderer and checks use only the Python standard library; they do not download packages or execute page content as code. Stylesheet URLs include a content digest to prevent stale cached styles after an update.
 
+Public slide PDFs linked from the homepage and talks page are hosted directly by GitHub Pages. Add new PDFs to `slides/` and link to `/slides/<filename>.pdf` from the source templates.
+
 ## Publishing
 
 GitHub Pages continues serving the repository root on `master`. `.nojekyll` publishes the committed HTML without Ruby, Jekyll, plugins, or a custom Actions deployment. `/`, `/research`, `/research.html`, `/talks`, `/talks.html`, `/beta/`, the custom 404, and the Atom feed remain available. GitHub Pages handles the extensionless HTML routes. Existing project websites such as `/rliable/` are separate repositories and are not modified here.
